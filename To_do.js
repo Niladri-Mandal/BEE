@@ -3,13 +3,11 @@ const taskInput = document.getElementById('task-input');
 
 const click = document.getElementById('btn');
 
-// Load tasks from local storage on page load
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach(task => addTask(task));
 }
 
-// Add a new task to the list
 function addTask(text) {
     const li = document.createElement('li');
    const b1=
@@ -68,15 +66,11 @@ function addTask(text) {
     updateLocalStorage();
 }
 
-// Update local storage with the current tasks
 function updateLocalStorage() {
     const tasks = Array.from(document.querySelectorAll('.task-text')).map(task => task.textContent);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-
-
-// Handle ENTER key press to add a task
 taskInput.addEventListener('keydown', event => {
     if (event.key === 'Enter' && taskInput.value.trim() !== '') {
         addTask(taskInput.value);
@@ -90,7 +84,6 @@ click.addEventListener('click',()=>{
     addTask(taskInput.value);
 })
 
-// Load tasks on page load
 loadTasks();
 
 
