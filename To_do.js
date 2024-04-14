@@ -24,7 +24,6 @@ function addTask(text) {
     `;
     taskList.appendChild(li);
 
-    // Attach event listeners for actions
     const taskText = li.querySelector('.task-text');
     const editIcon = li.querySelector('.edit-icon');
     const deleteIcon = li.querySelector('.delete-icon');
@@ -42,10 +41,10 @@ function addTask(text) {
     });
 
     rightpress.addEventListener('click',()=>{
-       /*
+       
         var textvalue = taskText.textContent;
         textvalue.style ="text-decoration:  red  wavy underline;"
-        */
+        
         taskText.style="Text-decoration:line-through;"
       
 
